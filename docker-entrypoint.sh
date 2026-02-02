@@ -10,7 +10,6 @@ if [ -f "/work/plantuml.py" ]; then
 fi
 
 run_build() {
-    rm -rf "$OUTDIR"
     mkdir -p "$OUTDIR"
 
     if [ -f "/work/logo.png" ]; then
@@ -76,7 +75,7 @@ if [ "${DEV:-0}" != "0" ]; then
     PORT="${PORT:-59754}"
     DEV_PORT="$PORT"
     run_build
-    livereload -t /work/dist -p "$PORT" --host 0.0.0.0 /work/dist &
+    livereload -t "$OUTDIR/index.html" -p "$PORT" --host 0.0.0.0 /work/dist &
     LIVERELOAD_PID=$!
     while true; do
         inotifywait -r -e modify,create,delete,move \

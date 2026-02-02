@@ -1,0 +1,32 @@
+<pre class="metadata">
+Title: test
+Shortname: test
+Level: none
+Status: LD
+Editor: Maarten Vandenbrande
+Abstract: Test specification.
+Markup Shorthands: markdown yes, css no
+</pre>
+
+Introduction {#introduction}
+====================
+
+Test specification.
+
+Section 1 {#section1}
+================
+
+Here is a sequence diagram:
+
+<pre class="plantuml">
+@startuml
+skinparam participantStyle rectangle
+
+participant "Test 1 ⚙️" as T1
+participant "Test 2 🛡️" as T2
+
+T1 -> T2: Message 1
+T2 --> T1: Message 2
+
+@enduml
+</pre>
